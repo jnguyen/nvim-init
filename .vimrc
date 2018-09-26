@@ -4,6 +4,7 @@ filetype off                  " required
 " Plugin-Manager {
     " set the runtime path to include Vundle and initialize
     set rtp+=~/.vim/bundle/Vundle.vim
+    set rtp+=~/
 
     " let Vundle manage Vundle, required
     call vundle#begin()    
@@ -80,9 +81,11 @@ filetype off                  " required
 " }
 
 " nVim-R {
+    " R output is highlighted with current colorscheme
+    let g:rout_follow_colorscheme = 1
+    " R commands in R output are highlighted
     let g:Rout_more_colors = 1
 " }
-"
 
 " ncm2 {
     " enable ncm2 on all bufs
@@ -97,8 +100,8 @@ filetype off                  " required
 
     " c-j c-k for moving in snippet
     " let g:UltiSnipsExpandTrigger		= "<Plug>(ultisnips_expand)"
-    let g:UltiSnipsJumpForwardTrigger	= "<c-j>"
-    let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"
+    let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
+    let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
     " If you want :UltiSnipsEdit to split your window.
     let g:UltiSnipsEditSplit="vertical"
@@ -107,8 +110,8 @@ filetype off                  " required
 " Keybindings {
     let mapleader="\\"
     nmap <leader>ne :NERDTree<cr>     " \\ne to open NerdTree
-"    nnoremap <C-J> <C-W><C-J>         " move down with Ctrl+J
-"    nnoremap <C-K> <C-W><C-K>         " move up with Ctrl+K
-"    nnoremap <C-L> <C-W><C-L>         " move right with Ctrl+L
-"    nnoremap <C-H> <C-W><C-H>         " move left with Ctrl+H
+    nnoremap <C-J> <C-W><C-J>         " move down with Ctrl+J
+    nnoremap <C-K> <C-W><C-K>         " move up with Ctrl+K
+    nnoremap <C-L> <C-W><C-L>         " move right with Ctrl+L
+    nnoremap <C-H> <C-W><C-H>         " move left with Ctrl+H
 " }
