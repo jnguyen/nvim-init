@@ -85,6 +85,8 @@ filetype off                  " required
     let g:rout_follow_colorscheme = 1
     " R commands in R output are highlighted
     let g:Rout_more_colors = 1
+    " turn off _ to -> transformation
+    let g:R_assign = 0
 " }
 
 " ncm2 {
@@ -114,4 +116,9 @@ filetype off                  " required
     nnoremap <C-K> <C-W><C-K>         " move up with Ctrl+K
     nnoremap <C-L> <C-W><C-L>         " move right with Ctrl+L
     nnoremap <C-H> <C-W><C-H>         " move left with Ctrl+H
+" }
+
+" Pandoc {
+    let g:pandoc#modules#disabled = ["folding", "spell"]
+    let g:pandoc#syntax#conceal#use = 0
 " }
