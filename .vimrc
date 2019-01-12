@@ -18,10 +18,11 @@ filetype off                  " required
         Plugin 'ncm2/ncm2'                      " Auto-complete with tab
         Plugin 'roxma/nvim-yarp'                " Required for ncm2
         Plugin 'ncm2/ncm2-ultisnips'            " ncm2 ultisnips integration
+        Plugin 'gaalcaras/ncm-R'                " ncm2 R support
         " Pandoc
         Plugin 'vim-pandoc/vim-pandoc'          " Needed for knitr, etc.
         Plugin 'vim-pandoc/vim-pandoc-syntax'   " Better syntax for *.Rmd
-        Plugin 'vim-pandoc/vim-rmarkdown'       " Extended suppor for *.Rmd
+        " Plugin 'vim-pandoc/vim-rmarkdown'       " Extended support for *.Rmd
         " R Support
         Plugin 'jalvesaq/Nvim-R'                " R integration
         Plugin 'lervag/vimtex'                  " LaTeX support for *.Rmd files
@@ -92,7 +93,7 @@ filetype off                  " required
 " ncm2 {
     " enable ncm2 on all bufs
     autocmd BufEnter * call ncm2#enable_for_buffer() 
-    set completeopt=noinsert,menuone,noselect    " required for ncm2
+    set completeopt=noinsert,menuone,noselect             " required for ncm2
 " }
 
 " ncm2-ultisnips {
@@ -101,7 +102,7 @@ filetype off                  " required
     inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
 
     " c-j c-k for moving in snippet
-    " let g:UltiSnipsExpandTrigger		= "<Plug>(ultisnips_expand)"
+    " let g:UltiSnipsExpandTrigger       = "<Plug>(ultisnips_expand)"
     let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
     let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
@@ -112,10 +113,10 @@ filetype off                  " required
 " Keybindings {
     let mapleader="\\"
     nmap <leader>ne :NERDTree<cr>     " \\ne to open NerdTree
-    nnoremap <C-J> <C-W><C-J>         " move down with Ctrl+J
-    nnoremap <C-K> <C-W><C-K>         " move up with Ctrl+K
-    nnoremap <C-L> <C-W><C-L>         " move right with Ctrl+L
-    nnoremap <C-H> <C-W><C-H>         " move left with Ctrl+H
+    " nnoremap <C-J> <C-W><C-J>         " move down with Ctrl+J
+    " nnoremap <C-K> <C-W><C-K>         " move up with Ctrl+K
+    " nnoremap <C-L> <C-W><C-L>         " move right with Ctrl+L
+    " nnoremap <C-H> <C-W><C-H>         " move left with Ctrl+H
 " }
 
 " Pandoc {

@@ -1,1 +1,1 @@
-dump of my vimrc for convenience :)
+dump of my .vimrc for convenience :)
