@@ -1,6 +1,7 @@
 Dump of my init.vim for convenience
 
 Built for:
+
     - nVim-R + neovim
 
 Usage:
