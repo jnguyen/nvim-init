@@ -8,7 +8,7 @@ Usage:
 ```
 git clone https://github.com/jnguyen/nvim-init.git
 cd nvim-init/
-mv ~/.config/nvim/init.vim ~/.config/nvim/init.vim init.vim.old
+mv ~/.config/nvim/init.vim ~/config/nvim/init.vim.old
 cp init.vim ~/.config/nvim/init.vim
 cd ..
 rm -R nvim-init/
