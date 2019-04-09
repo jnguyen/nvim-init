@@ -88,8 +88,6 @@ filetype off                  " required
     let g:Rout_more_colors = 1
     " turn off _ to -> transformation
     let g:R_assign = 0
-    " Open R documentation in a new vim tab when calling ? from the terminal
-    let R_nvimpager = "tabnew"
 " }
 
 " ncm2 {
@@ -115,6 +113,8 @@ filetype off                  " required
 " Keybindings {
     let mapleader="\\"
     nmap <leader>ne :NERDTree<cr>     " \\ne to open NerdTree
+    nmap <leader>y :let @+=@0<cr>     " \y to move yank register to system clipb
+    nmap <leader>p "+p    " \p to paste from keyboard
     " nnoremap <C-J> <C-W><C-J>         " move down with Ctrl+J
     " nnoremap <C-K> <C-W><C-K>         " move up with Ctrl+K
     " nnoremap <C-L> <C-W><C-L>         " move right with Ctrl+L
