@@ -1,3 +1,8 @@
+" Preamble {
+    " Setting encoding ensures that powerline fonts will work
+    set encoding=utf-8                        " Set encoding to UTF-8
+" }
+
 " Plug-Manager {
     " Specify a directory for plugins
     " - For Neovim: stdpath('data') . '/plugged'
@@ -58,7 +63,7 @@
 "    colorscheme wombat256mod
     " Set maximum characters per column to 80
     set textwidth=80                  " Wrap text at 80 chars
-    set columns=80
+    " set columns=80                  " Set window size to 80 chars
     if exists('+colorcolumn')
       set colorcolumn=80
     else
@@ -76,7 +81,7 @@
 " }
 
 " Vim-Airline {
-    " let g:airline_powerline_fonts = 1
+    let g:airline_powerline_fonts = 1
     let g:airline_theme = 'onehalfdark'
 " }
 
