@@ -1,43 +1,42 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" Plug-Manager {
+    " Specify a directory for plugins
+    " - For Neovim: stdpath('data') . '/plugged'
+    " - Avoid using standard Vim directory names like 'plugin
+    call plug#begin(stdpath('data'))
 
-" Plugin-Manager {
-    " set the runtime path to include Vundle and initialize
-    set rtp+=~/.vim/bundle/Vundle.vim
-    set rtp+=~/
-
-    " let Vundle manage Vundle, required
-    call vundle#begin()    
-    Plugin 'VundleVim/Vundle.vim'
-    " Plugins {
-        " Align lines
-        Plugin 'godlygeek/tabular'              " :Tabularize
-        " Auto-completion
-        Plugin 'SirVer/ultisnips'               " Insert snippets of code
-        Plugin 'honza/vim-snippets'             " Snippet pack for ultisnips
-        Plugin 'ncm2/ncm2'                      " Auto-complete with tab
-        Plugin 'roxma/nvim-yarp'                " Required for ncm2
-        Plugin 'ncm2/ncm2-ultisnips'            " ncm2 ultisnips integration
-        Plugin 'gaalcaras/ncm-R'                " ncm2 R support
+    " Plugin list {
+        " UltiSnips
+        Plug 'SirVer/ultisnips'               " Insert snippets of code
+        Plug 'honza/vim-snippets'             " Snippet pack for ultisnips
+        " NCM2 - Neovim auto complete
+        Plug 'ncm2/ncm2'                      " Auto-complete with tab
+        Plug 'roxma/nvim-yarp'                " Required for ncm2
+        Plug 'ncm2/ncm2-ultisnips'            " ncm2 ultisnips integration
+        Plug 'gaalcaras/ncm-R'                " ncm2 R support
+        Plug 'ncm2/ncm2-jedi'                 " ncm2 python support
+        Plug 'ncm2/ncm2-bufword'              " Current buffer word completion
+        Plug 'ncm2/ncm2-path'                 " Required for completions
         " Pandoc
-        Plugin 'vim-pandoc/vim-pandoc'          " Needed for knitr, etc.
-        Plugin 'vim-pandoc/vim-pandoc-syntax'   " Better syntax for *.Rmd
-        " Plugin 'vim-pandoc/vim-rmarkdown'       " Extended support for *.Rmd
+        Plug 'vim-pandoc/vim-pandoc'          " Needed for knitr, etc.
+        Plug 'vim-pandoc/vim-pandoc-syntax'   " Better syntax for *.Rmd
         " R Support
-        Plugin 'jalvesaq/Nvim-R'                " R integration
-        Plugin 'lervag/vimtex'                  " LaTeX support for *.Rmd files
+        Plug 'jalvesaq/Nvim-R'                " R integration
+        " LaTeX support
+        Plug 'lervag/vimtex'                  " LaTeX support for *.Rmd files
+        " Vim colorstepper
+        Plug 'qualiabyte/vim-colorstepper'
         " Vim Themes
-        Plugin 'scrooloose/nerdtree'            " Directory tree
-	    Plugin 'vim-airline/vim-airline'        " Nice looking status bar
-	    Plugin 'vim-airline/vim-airline-themes' " Themes for airline
-        Plugin 'rafi/awesome-vim-colorschemes'  " Themes for vim
+        Plug 'scrooloose/nerdtree'            " Directory tree
+	    Plug 'vim-airline/vim-airline'        " Nice looking status bar
+	    Plug 'vim-airline/vim-airline-themes' " Themes for airline
+        Plug 'rafi/awesome-vim-colorschemes'  " Themes for vim
     " }
-    call vundle#end()
+    call plug#end()
 " }
 
 " Formatting {
     " Text and editor colors
-    filetype plugin indent on     " required
+    " filetype plugin indent on     " required | Plug auto does this
     syntax enable
     set number                      " Turn line numbers on
     set background=dark             " Assume background is dark
@@ -51,7 +50,7 @@ filetype off                  " required
 "    colorscheme hybrid_reverse
 "    colorscheme iceberg
 "    colorscheme jellybeans
-    colorscheme lucius
+    colorscheme onehalfdark
 "    colorscheme minimalist
 "    colorscheme rdark-terminal2
 "    colorscheme space-vim-dark
@@ -66,19 +65,19 @@ filetype off                  " required
       au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
     endif
     " Tab settings
-	set expandtab                     " Convert tabs to spaces
+    set expandtab                     " Convert tabs to spaces
     set tabstop=4                     " Tabs at 4 characters long
     set softtabstop=4                 " Backspace tabs 4 chars at a time
     set shiftwidth=4                  " Indents are 4 chars
-    set autoindent                    " Automatically indent code
+    " set autoindent                    " Automatically indent code
     set smartindent                   " Indent reacts to filetype
     set splitright                    " All new vsplits open on the right
     set splitbelow                    " All new splits open below
 " }
 
 " Vim-Airline {
-    let g:airline_powerline_fonts = 1
-    let g:airline_theme = 'aurora'
+    " let g:airline_powerline_fonts = 1
+    let g:airline_theme = 'onehalfdark'
 " }
 
 " nVim-R {
@@ -113,8 +112,8 @@ filetype off                  " required
 " Keybindings {
     let mapleader="\\"
     nmap <leader>ne :NERDTree<cr>     " \\ne to open NerdTree
-    nmap <leader>y :let @+=@0<cr>     " \y to move yank register to system clipb
-    nmap <leader>p "+p    " \p to paste from keyboard
+    nmap <leader>y :let @+=@0<cr>     " \y to move yank register to system clip
+    nmap <leader>p "+p                " \p to paste from keyboard
     " nnoremap <C-J> <C-W><C-J>         " move down with Ctrl+J
     " nnoremap <C-K> <C-W><C-K>         " move up with Ctrl+K
     " nnoremap <C-L> <C-W><C-L>         " move right with Ctrl+L
@@ -122,6 +121,6 @@ filetype off                  " required
 " }
 
 " Pandoc {
-    let g:pandoc#modules#disabled = ["folding", "spell"]
-    let g:pandoc#syntax#conceal#use = 0
+    " let g:pandoc#modules#disabled = ["folding", "spell"]
+    " let g:pandoc#syntax#conceal#use = 0
 " }
